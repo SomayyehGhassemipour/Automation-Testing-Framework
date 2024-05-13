@@ -1,5 +1,6 @@
 # Major Libs
 pytest==8.2.0
+pytest-html==4.1.1
 
 # Helpers
 
