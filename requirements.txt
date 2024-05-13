@@ -1,0 +1,9 @@
+# Major Libs
+pytest==8.2.0
+
+# Helpers
+
+# Code Structure
+black==24.4.2
+flake8==7.0.0
+isort==5.13.2
