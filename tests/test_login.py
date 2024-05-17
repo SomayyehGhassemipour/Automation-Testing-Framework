@@ -1,6 +1,4 @@
-from application.ui.github_ui import GithubUI
-
-def test_negative_login():
+def test_github_login(github_ui_app):
     """
     Summary: Negative Test for Login 
     steps:
@@ -9,21 +7,13 @@ def test_negative_login():
         3. Click login/signin button
 
     Expected result:
-        Error saying "...." appeared
+        Error saying "Incorrect username or password." appeared
     """
 
-    # initial GithubUI 
-    github_ui = GithubUI()
-
-    # navigate to it
-    github_ui.login_page.navigate_to()
-
     # Enter wrong credential 
-    github_ui.try_login("your_username", "your_password")
+    github_ui_app.try_login("your_username", "your_password")
 
     # Expected result
-    assert github_ui.login_page.check_wrong_creds_message()
+    assert github_ui_app.login_page.check_wrong_creds_message()
 
-    # clean up
-    github_ui.close()
     
