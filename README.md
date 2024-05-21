@@ -30,3 +30,4 @@ In order to avoid conflicts during git push
 3. src/applications - folder for system under tests abstractions
 4. src/config - folder for configuration of framework
 5. src/helpers - folder for single-use funtions, etc
+6. pyproject.toml - it include those directories that should be ignored by isort and Black plugins
