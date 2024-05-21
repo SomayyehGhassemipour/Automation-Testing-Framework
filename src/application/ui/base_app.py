@@ -12,8 +12,8 @@ class BaseApp:
     self.browser.get(url)
 
   def enter_input(self, locator: str, text: str):
-    # input = WebDriverWait(self.browser, 2).until(EC.element_to_be_clickable((By.XPATH, locator)))
-    input = self.browser.find_element(By.XPATH, locator)
+    input = WebDriverWait(self.browser, 2).until(EC.element_to_be_clickable((By.XPATH, locator)))
+    # input = self.browser.find_element(By.XPATH, locator)
     input.clear()
     input.send_keys(text)
 
