@@ -12,18 +12,18 @@ class BaseApp:
     self.browser.get(url)
 
   def enter_input(self, locator: str, text: str):
-    input = WebDriverWait(self.browser, 50).until(EC.element_to_be_clickable((By.XPATH, locator)))
+    input = WebDriverWait(self.browser, 2).until(EC.element_to_be_clickable((By.XPATH, locator)))
     input.clear()
     input.send_keys(text)
 
   def click_btn(self, locator: str):
-    sign_in_button = WebDriverWait(self.browser, 5).until(
+    sign_in_button = WebDriverWait(self.browser, 2).until(
             EC.element_to_be_clickable((By.XPATH, locator))
         )
     sign_in_button.click()
   
   def get_text(self, locator: str):
-    error_message_element = WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located((By.XPATH, locator)))
+    error_message_element = WebDriverWait(self.browser, 2).until(EC.visibility_of_element_located((By.XPATH, locator)))
     return error_message_element.text
   
   def close_browser(self):
